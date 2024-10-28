@@ -1,5 +1,4 @@
 import React from "react";
-import "../config/default.config";
 import data from "../config/default.config";
 
 function buildAccordion(props) {
@@ -7,11 +6,11 @@ function buildAccordion(props) {
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button
-          class="accordion-button"
+          class="accordion-button collapsed fw-bold"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target={props.collapse}
-          aria-expanded="true"
+          aria-expanded="false"
           aria-controls={props.id}
         >
           {props.title}
@@ -19,7 +18,7 @@ function buildAccordion(props) {
       </h2>
       <div
         id={props.id}
-        class="accordion-collapse collapse show"
+        class="accordion-collapse collapse"
         data-bs-parent="#accordionExample"
       >
         <div class="accordion-body">{props.content}</div>
