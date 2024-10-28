@@ -10,8 +10,13 @@ function AccordionInput(props) {
     setTask(newTask);
   }
 
+  function handleKeyPress(event) {
+    if (event.key === "Enter") {
+      handleAddTask();
+    }
+  }
+
   function handleAddTask() {
-    console.log("task: '" + task + "'");
     if (!task) {
       console.log("task is empty");
       return;
@@ -28,6 +33,7 @@ function AccordionInput(props) {
         type="text"
         className="form-control"
         placeholder="Enter your task here..."
+        onKeyDown={handleKeyPress}
         onChange={handleInputChange}
         value={task}
         required
