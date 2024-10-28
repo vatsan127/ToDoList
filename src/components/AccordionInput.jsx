@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function AccordionInput() {
+function AccordionInput(props) {
   const [task, setTask] = useState("");
   const [taskList, setTaskList] = useState([]);
 
@@ -12,7 +12,9 @@ function AccordionInput() {
 
   function handleAddTask() {
     setTaskList([...taskList, task]);
-    console.log(taskList);
+    console.log("taskList: " + taskList);
+    console.log("props: " + props);
+    props.onClick(taskList);
   }
 
   return (
@@ -22,6 +24,7 @@ function AccordionInput() {
         className="form-control"
         placeholder="Enter your task here..."
         onChange={handleInputChange}
+        value={task}
       />
       <button
         className="btn btn-primary"
