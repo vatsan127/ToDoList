@@ -11,10 +11,15 @@ function AccordionInput(props) {
   }
 
   function handleAddTask() {
-    setTaskList([...taskList, task]);
-    console.log("taskList: " + taskList);
-    console.log("props: " + props);
-    props.onClick(taskList);
+    console.log("task: '" + task + "'");
+    if (!task) {
+      console.log("task is empty");
+      return;
+    }
+    const updatedTaskList = taskList.length > 0 ? [...taskList, task] : [task];
+    setTaskList(updatedTaskList);
+    props.onClick(updatedTaskList);
+    console.log("Updated taskList: '" + updatedTaskList + "'");
   }
 
   return (
@@ -25,6 +30,7 @@ function AccordionInput(props) {
         placeholder="Enter your task here..."
         onChange={handleInputChange}
         value={task}
+        required
       />
       <button
         className="btn btn-primary"

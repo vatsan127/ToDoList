@@ -8,7 +8,6 @@ function Accordion() {
   const [accordionData, setAccordionData] = useState([]);
 
   function getData(data) {
-    console.log("data: '" + data[data.length - 1] + "'");
     setAccordionData((prevData) => [
       ...prevData,
       {
@@ -17,7 +16,6 @@ function Accordion() {
         content: data[data.length - 1],
       },
     ]);
-    console.log("Accordiondata: '" + accordionData + "'");
   }
 
   function createAccordion() {
