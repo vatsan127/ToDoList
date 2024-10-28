@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import { useState } from "react";
+import Accordion from "./components/Accordion";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <h1>Hello World</h1>
-   )
+    <div className="container">
+      <h1 className="text-center my-5">React ToDo App</h1>
+      <Accordion />
+    </div>
+  );
 }
 
-export default App
+export default App;
